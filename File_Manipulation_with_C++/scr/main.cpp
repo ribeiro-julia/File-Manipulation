@@ -31,17 +31,13 @@ void newBINARYfile(){
 	ifstream inputFile ("../inputFiles/data_athlete_event.csv");
 	ofstream outputFile("../output/BinaryFile.bin");
 
-    /*conjunto de variaveis auxiliares para guardar informacoes e 
-    controlar campo de leitura em cada linha. Sao zeradas periodicamente 
-    dentro do código */
+    /*group of auxiliar control variable*/
 	int characternum = 0;
 	unsigned commaCounter =0, i=0, j=0;
 	string line;
 	char info[30];
     char character;
-	dataFormat temporarySave;
-	
-	
+	dataFormat temporarySave;	
 
 	try{
 		inputFile.open("../input/data_athlete_event.csv");
@@ -80,7 +76,7 @@ void newBINARYfile(){
 							/*the commaCounter's job is to inform which field of the dataFormat 
 							the program is currently dealing with*/
 							switch(commaCounter){
-								case 1:
+								case 1: /*this case works with the ID field*/
 									for(k=0; k<characternum;k++){
 										temporarySave.id[k]=info[k];
 									}
@@ -91,7 +87,7 @@ void newBINARYfile(){
 										throw 102;
 									}
 									break;  
-								case 2:
+								case 2:  /*this case works with the NAME field*/
 									for(k=0; k<characternum;k++){
 										temporarySave.name[k]=info[k];
 									}
@@ -102,7 +98,7 @@ void newBINARYfile(){
 										throw 102;
 									}
 									break;
-								case 3:
+								case 3:  /*this case works with the CITY field*/
 									for(k=0; k<characternum;k++){
 										temporarySave.city[k]=info[k];
 									}							
@@ -113,7 +109,7 @@ void newBINARYfile(){
 										throw 102;
 									}
 									break;
-								case 4:
+								case 4:  /*this case works with the SPORT field*/
 									for(k=0; k<characternum;k++){
 										temporarySave.sport[k]=info[k];
 									}
@@ -125,11 +121,10 @@ void newBINARYfile(){
 										throw 102;
 									}
 									break;
-								case 5:
+								case 5:  /*this case works with the EVENT field*/
 									for(k=0; k<characternum;k++){
 									temporarySave.event[k]=info[k];
 									}
-	
 								
 									if(outputFile){
 										outputFile.write((char*)(&temporarySave.event),sizeof(dataFormat));
@@ -138,7 +133,7 @@ void newBINARYfile(){
 										throw 102;
 									}
 									break;
-								case 6:
+								case 6:  /*this case works with the NOC field*/
 									for(k=0; k<characternum;k++){
 										temporarySave.noc[k]=info[k];
 									}
