@@ -18,10 +18,10 @@ struct dataFormat{
 bool cleanData(char character){
 
    if(character=='(' or character==')' or character=='-'){
-	return true;  
+	   return true;  
    }
    else{
-        return false;
+	   return false;
    }
 }
 
