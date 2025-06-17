@@ -1,6 +1,6 @@
 # File-Manipulation-with-C++-
 
-A C++ program that converts an specific .CSV file to a structured binary file, while performing data cleaning and validation. It's main purpose it's to help people learning the basics in file manipulation in C++ 
+A C++ program that converts an specific .csv file to a structured binary file, while performing data cleaning and validation. It's main purpose it's to help people learning the basics in file manipulation in C++ 
 
 ## License
 	GPL-3.0
